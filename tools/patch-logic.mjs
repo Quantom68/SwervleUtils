@@ -173,7 +173,7 @@ export function deriveIdentifiers(mainSrc, mainRawSrc) {
       // Match the LOCAL binding (`x as NAME`, or a bare NAME) — not merely any
       // mention of it, which also hits `NAME as other` in an unrelated import.
       const local = names.RV.replace(/\$/g, "\\$");
-      const re = new RegExp(`import\\{[^}]*(?:[{,]|\\bas\\s+)\\s*${local}(?=\\s*[,}])[^}]*\\}from"(\\./[^"]+)"`);
+      const re = new RegExp(`import\\{[^}]*(?:[{,]|\\bas\\s+)\\s*${local}(?=\\s*[,}])[^}]*\\}from"(\\assets/[^"]+)"`);
       const m = mainRawSrc.match(re);
       names.rvChunkPath = m?.[1] ?? null;
     }
